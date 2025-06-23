@@ -1,54 +1,39 @@
-# React + TypeScript + Vite
+# ForkFolio
+My forkfolio is a recipe site where I can publish my recipies.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Description
 
-Currently, two official plugins are available:
+The purpose of this repository is to make a recipie site with real recipies based on the previous repository called Forkfolio.
+Forkfolio is a high fidelity prototype and a part of an examination for a course.
+The årototype is published on GitHub pages, see [Forkfolio](https://kattisa.github.io/forkfolio/).
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-## Expanding the ESLint configuration
+## Getting Started
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+This is a React + Vite + TypeScript application. After installing run:
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+`npm install`
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+and then to start the application:
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+`npm run dev`
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+
+## Authors
+
+This repository is authored by the owner of KattisA GitHub account Katarina Lejonlid.
+
+
+## Acknowledgments
+
+Learning platforms, inspiration and further reading:
+* [W3schools](https://www.w3schools.com/)
+* [Semantisk html:](https://www.w3schools.com/html/html5_semantic_elements.asp).
+* [Example of template](https://www.pluralsight.com/resources/blog/guides/semantic-html)
+* [Responsive forms](https://www.w3schools.com/css/tryit.asp?filename=trycss_form_responsive)
+* [Tables](https://www.w3schools.com/css/tryit.asp?filename=trycss_table_striped)
+* [Buttons](https://www.w3schools.com/css/css3_buttons.asp )
+* [Clamp](https://developer.mozilla.org/en-US/docs/Web/CSS/clamp#syntax)
+* [Fonts](https://www.thoughtco.com/web-safe-font-stacks-3467429)
+* [Font height](https://www.smashingmagazine.com/2014/09/balancing-line-length-font-size-responsive-web-design/)
+* [Tooltip](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/tooltip_role)
