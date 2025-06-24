@@ -1,68 +1,836 @@
-:root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
-
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
-}
-
+/* General CSS for the html tags */
 body {
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.2rem;
+  line-height: 1.5;
   margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: #fff;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1.2;
+}
+
+p {
+  line-height: 1.6;
+}
+
+img {
+  max-width: 100%;
+}
+
+/* Wrapper container to expand content of the pages */
+.wrapper {
   display: flex;
-  place-items: center;
-  min-width: 320px;
+  flex-direction: column;
   min-height: 100vh;
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+/* Header section */
+.header {
+  display: flex;
+  background-color: #222222;
+  color: white;
 }
 
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
+.logo {
+  display: flex;
+  margin: 1.5rem 0 0 1.5rem;
+  text-decoration: none;
+  color: inherit;
+}
+
+.logo .title {
+  font-size: clamp(1.7rem, 2vw, 2.65rem);
+  padding-left: 0.5rem;
+}
+
+/* Hero */
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Top navigation bar that is responsive when the screen size gets smaller */
+.topBar {
+  overflow: hidden;
+  background-color: #222222;
+}
+
+.topBar a {
+  float: right;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 1rem;
+  text-decoration: none;
+  font-size: clamp(1rem, 2vw, 1.3rem);
+}
+
+.topBar a:hover {
+  background-color: #EAF4F4;
+  color: black;
+}
+
+.topBar .icon {
+  display: none;
+}
+
+.topBar a {display: none;}
+
+.topBar a.icon {
+  float: right;
+  display: block;
+}
+
+.topBar.mobile {position: relative;}
+
+.topBar.mobile .icon {
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.topBar.mobile a {
+  float: none;
+  display: block;
+  text-align: left;
+}
+
+/* Containers */
+/* Container for main content in index file*/
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  flex: 1;
+}
+
+/* Containers for main content in add recipe */
+.mainContent {
+  flex: 1;
+}
+
+.content {
+  width: 80%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+/* Container for sections where there is no heading element */
+.sectionContainer {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Cards */
+/* Common Card classes */
+/* Recipe Card */
+.recipeCard {
+  width: 100%;
+  margin: 0.5rem;
+  background-color: #E3D5CA;
+  padding: 1rem;
+  box-sizing: border-box;
+  border-radius: 0.7rem;
+  box-shadow: 0 0 0.625rem 0 rgba(138, 129, 124, 0.8);
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.recipeCard:hover {
+  transform: translateY(-0.7rem);
+  box-shadow: 0 0 1.25rem rgba(213, 189, 175, 1);
+}
+
+.recipeCard img {
+  width: 100%;
+  border-radius: 0.7rem;
+}
+
+.cardFooter {
+  display: flex;
+  justify-content: space-between;
+  align-items: self-end;
+}
+
+.iconContainer {
+  display: flex;
+  gap: 0.5rem;
+  margin: 0.5rem;
+}
+
+.fa {
   cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+  user-select: none;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
+.greenChoice {
+  color: #586f6b;
+}
+
+.fa-heart {
+  color: #e5383b;
+}
+
+/* Article Card */
+.articleCard {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border-radius: 0.7rem;
+  box-shadow: 0 0.25rem 0.5rem rgba(213, 189, 175, 0.8);
+  color: inherit;
+  background-color: #EDEDE9;
+  margin: 1rem;
+  text-decoration: none;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.articleCard:hover {
+  transform: translateY(-0.7rem);
+  box-shadow: 0 0 1.25rem rgba(213, 189, 175, 1);
+}
+
+.articleCard article {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.articleCard picture {
+  width: 100%;
+}
+
+.articleCard img {
+  width: 100%;
+  height: auto;
+  border-radius: 0.7rem;
+}
+
+.articleContent {
+  padding: 1rem;
+}
+
+/* Authors card */
+.authorCard {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border-radius: 0.7rem;
+  box-shadow: 0 0.25rem 0.5rem rgba(147, 58, 107, 0.8);
+  color: inherit;
+  background-color: #e0b1cb;
+  margin: 1rem;
+}
+
+.authorCard article {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.authorCard picture {
+  width: 100%;
+}
+
+.authorCard img {
+  width: 100%;
+  height: auto;
+  border-radius: 50%;
+  padding: 0.3rem;
+}
+
+.articleContent .fa {
+  color:#933a6b;
+  margin:0.3rem;
+}
+
+.highlight {
+  font-weight: 600;
+}
+
+/* Section styling */
+.sectionTitle {
+  font-size: clamp(1.75rem, 2vw, 2.1rem);
+  display: flex;
+  justify-content: center;
+}
+
+/* Articles and texts styling*/
+.articleContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 1rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.articleContainer h1 {
+  text-align: center;
+  padding: 0.5rem;
+}
+
+.textContent {
+  margin: 1rem 2rem;
+}
+
+.textContent li,p {
+  font-size: clamp(1rem, 2.5vw, 1.1rem );
+}
+
+.textContent ul {
+  list-style-type: circle;
+}
+
+.textContent a {
+  text-decoration: none;
+  color: #4a6459;
+}
+
+.textIntro {
+  font-weight: 400;
+  font-style: italic;
+  font-size: clamp(1.2rem, 2vw, 1.5rem);
+}
+
+.imageContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.imageContainer img {
+  border-radius: 0.7rem;
+  box-shadow: 0 0.25rem 0.5rem rgba(237, 237, 233, 0.5);
+}
+
+/* Recipe page styling */
+.topContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.topContainer picture {
+  display: none;
+}
+.topContainer img {
+  width: 100%;
+  height: auto;
+  border-radius: 0.7rem;
+  box-shadow: 0 0.25rem 0.5rem rgba(237, 237, 233, 0.5);
+}
+
+.topContainer picture.active {
+  display: block;
+}
+
+.ingredients {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  font-size: clamp(1.2rem, 2vw, 1.4rem);
+  padding: 1rem;
+  margin: 1rem;
+  border-radius: 0.7rem;
+  box-shadow: 0 0.25rem 0.5rem rgba(214, 204, 194, 0.8);
+  background-color: #E3D5CA;
+  width: 60%;
+}
+
+.ingredients h3 {
+  margin: 0;
+}
+
+.ingredients .amount {
+  font-weight: 700;
+}
+
+.ingredients ul {
+  list-style-type: circle;
+}
+
+.ingredients li::marker, .textContent li::marker {
+  font-weight: 700;
+  font-size: 2rem;
+  position: absolute;
+  left: 0;
+}
+
+/* Styling for ordered list */
+ol.howList {
+  list-style: none;
+  counter-reset: list-counter;
+  padding: 0;
+}
+
+ol.howList li {
+  margin-bottom: 1rem;
+  position: relative;
+  padding-left: 2rem;
+}
+
+ol.howList li::before {
+  content: counter(list-counter)'.';
+  counter-increment: list-counter;
+  font-weight: 700;
+  font-size: 1.5rem;
+  position: absolute;
+  left: 0;
+}
+
+.inList {
+  font-weight: 400;
+  font-style: italic;
+}
+
+/* Categories pages styles */
+.category {
+  display: none;
+}
+
+.category.active {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Form styling as in add recipie */
+.formGroup {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
+}
+.formContainer {
+  display: flex;
+  flex-direction: column;
+  border-radius: 0.25rem;
+  box-shadow: 0 0.25rem 0.5rem rgba(191, 213, 227, 1);
+  background-color: #eff4f8;
+  width:80%;
+  margin: 0 auto;
+  padding: 1rem;
+}
+.formGroup button {
+  margin-left: auto;
+}
+
+.content h2 {
+  text-align: center;
+}
+
+input[type=text], textarea {
+  width: 100%;
+  padding: 1rem;
+  border: 0.05rem solid #ccc;
+  border-radius: 0.25rem;
+  box-sizing: border-box;
+  resize: vertical;
+  font-size: large;
+}
+
+label {
+  margin-bottom: 0.5rem;
+  padding: 0.75rem 0.75rem 0.75rem 0;
+  display: inline-block;
+  font-weight: bold;
+}
+/* Info text in the form */
+.info {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  margin-bottom: 0.5rem;
+  color: #222;
+}
+
+.info i {
+  margin-right: 0.5rem;
+  color: #468faf;
+  font-size: 1.5rem;
+}
+
+.info span {
+  font-size: 1.1rem;
+}
+/* Buttons */
+.button {
+  background-color: #5a7a50;
+  border: none;
+  border-radius: 0.7rem;
+  color: white;
+  padding: 1rem 2rem;
+  font-size: clamp(1.2rem, 2vw, 1.5rem);
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  cursor: pointer;
+  box-shadow: 0 0.25rem 0.5rem rgba(111, 138, 102, 1);
+}
+.button:hover {
+  background-color: #325925;
+}
+
+.addButton {
+  display: inline-block;
+  border-radius: 1rem;
+  background-color: #f5ebe0;
+  box-shadow: 0 0 0.625rem 0 rgba(213, 189, 175, 0.8);
+  color: 	#222222;
+  text-align: center;
+  font-size: clamp(1.4rem, 2vw, 2.1rem);
+  padding: 1.25rem;
+  width: 100%;
+  max-width: 16rem;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 0.5rem;
+  text-decoration: none;
+}
+
+.addButton span,
+.goToButton span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.addButton span:after,
+.goToButton span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -1.25rem;
+  transition: 0.5s;
+}
+
+.addButton:hover span,
+.goToButton:hover span {
+  padding-right: 1.5rem;
+}
+
+.addButton:hover span:after,
+.goToButton:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+.addButton:focus,
+.goToButton:focus {
+  outline: 2px solid #FFFFFF;
+  outline-offset: 4px;
+}
+
+.goToButton {
+  display: inline-block;
+  border-radius: 1rem;
+  background-color: #EAF4F4;
+  box-shadow: 0 0.25rem 0.5rem rgba(111, 138, 102, 1);
+  color: 	#222222;
+  text-align: center;
+  font-size: clamp(1.1rem, 2vw, 1.5rem);
+  padding: 1.5rem;
+  width: auto;
+  max-width: 12rem;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 0.5rem;
+  text-decoration: none;
+}
+
+.tag {
+  background-color: #CCE3DE;
+  border-radius: 1rem;
+  cursor: pointer;
+  text-decoration: none;
+  box-shadow: 0 0 0.625rem 0 rgba(164, 195, 178, 1);
+  color: 	#222222;
+  font-size: clamp(1rem, 1vw, 1.2rem);
+  padding: 0.5rem;
+  margin: 0.5rem;
+  border: 1px solid #A4C3B2;
+}
+
+.tag:hover {
+  background-color: #6B9080;
+}
+
+/* Tooltips */
+.tooltip {
+  position: relative;
+  display: inline-block;
+}
+
+.tooltip .tooltipText {
+  visibility: hidden;
+  width: 8rem;
+  background-color: rgba(107, 144, 128, 0.9);
+  color: #222;
+  text-align: center;
+  border-radius: 0.4rem;
+  padding: 0.3rem 0;
+  position: absolute;
+  z-index: 1;
+  top: -0.3rem;
+  right: 105%;
+}
+
+.tooltip:hover .tooltipText {
+  visibility: visible;
+}
+
+/* Message classes*/
+/* Alert box */
+.alert {
+  padding: 1rem 1rem 1rem ;
+  margin-bottom: 1.25rem;
+  border-radius: 0.25rem;
+  text-align: end;
+}
+
+.success {
+  color: #155724;
+  background-color: #d4edda;
+  border: 1px solid #c3e6cb;
+}
+
+#message {
+  display:none;
+}
+
+.message {
+  margin-left: auto;
+}
+/* Infobox for sustainability */
+.infoBox {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Hide content */
+.desktopOnly, .visually-hidden {
+  display: none;
+}
+
+/* Striped List */
+
+.stripedList {
+  list-style-type: none;
+  padding: 0;
+  width: 80%;
+  margin: 0 auto;
+
+}
+
+.stripedList li {
+  padding: 10px;
+  font-size: 1.2rem;
+}
+
+.stripedList a {
+  text-decoration: none;
+  color: #4a6459;
+}
+
+.stripedList li:nth-child(odd) {
+  background-color: #EAF4F4;
+}
+
+.stripedList li:nth-child(even) {
+  background-color: #ffffff;
+}
+
+/* Footer styles*/
+.footer {
+  display: flex;
+  flex-direction: column;
+  background-color: #222222;
+  color: white;
+  bottom: 0;
+  width: auto;
+  padding: 2rem 3rem;
+}
+
+.footerLogo {
+  display: flex;
+  margin-right: 2rem;
+  padding-right: 1rem;
+  font-size: clamp(1.1rem, 2vw, 1.3rem);
+  text-decoration: none;
+  color: white;
+}
+
+.footerLogo img {
+  margin: 1rem 0.1rem 0 0;
+}
+
+.footerLinks {
+  padding: 0 0 1rem  1rem;
+}
+
+.footerLinks a {
+  display: flex;
+  text-decoration: none;
+  color: white;
+
+}
+/* Media queries */
+/* Small Screens, Laptops, and Desktops */
+@media (min-width: 769px){
+  body {
+    font-size: 1.3rem;
+    line-height: 1.5;
   }
-  a:hover {
-    color: #747bff;
+
+  .recipeCard  {
+    width: calc(45% - 20px);
   }
-  button {
-    background-color: #f9f9f9;
+
+  .ingredients {
+    width: 80%;
+  }
+
+  .textContent {
+    margin: 1rem 4rem;
+  }
+
+  .iconContainer {
+    gap: 0.8rem;
+  }
+
+}
+
+@media screen and (min-width: 1201px) {
+  body {
+    font-size: 1.1rem;
+    line-height: 1.5;
+  }
+  .topBar {
+    padding-right: 5rem;
+  }
+
+  .topBar a {display: block;}
+  .topBar a.icon {
+    display: none;
+  }
+
+  .logo {
+    display: flex;
+    margin: 3rem 0 0 3rem;
+  }
+
+  .tag {
+    margin: 1rem;
+    padding: 1rem;
+  }
+
+  .recipeCard  {
+    width: calc(33.33% - 20px);
+  }
+
+  .articleCard,
+  .authorCard {
+    flex-direction: row;
+    width: calc(45% - 20px);
+  }
+  .articleCard article,
+  .authorCard article {
+    flex-direction: row;
+    width: 100%;
+  }
+  .articleCard picture, .articleCard img {
+    height: auto;
+    padding-top: 0.3rem;
+  }
+  .authorCard picture, .authorCard img{
+    height: auto;
+  }
+  .articleContent {
+    width: 50%;
+  }
+
+  .articleContent .fa {
+    color:#933a6b;
+    margin:0.5rem;
+  }
+
+  .articleContainer h1 {
+    text-align: center;
+    padding: 1rem;
+  }
+
+  .textContent {
+    margin: 2rem 4rem;
+  }
+
+  .topContainer {
+    flex-direction: row;
+    align-items: stretch;
+  }
+
+  .ingredients {
+    width: auto;
+    height: inherit;
+  }
+
+  /* Add recipe forms */
+  .formGroup {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  label {
+    flex: 1;
+    margin-bottom: 0;
+    padding-right: 1rem;
+    text-align: right;
+  }
+
+  input[type="text"], textarea {
+    flex: 3;
+    font-size: x-large;
+  }
+
+  .addButton {
+    padding: 1.5rem;
+  }
+
+  .desktopOnly {
+    display: flex;
+  }
+
+  /* Footer styles */
+  .footer {
+    flex-direction: row;
+  }
+
+  .footerLogo {
+    margin-right: 3rem;
+    padding-right: 1rem;
+  }
+
+  .footerLogo img {
+    margin: 0 0.5rem 0 0;
+  }
+
+  .footerLinks a {
+    padding-right: 1rem;
   }
 }
+
