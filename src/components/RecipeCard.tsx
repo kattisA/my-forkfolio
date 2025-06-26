@@ -6,7 +6,7 @@ interface Props {
 }
 
 export const RecipeCard = ({ recipe }: Props) => {
-    const { id, title, description, greenChoice } = recipe;
+    const { title, description, greenChoice } = recipe;
 
     return (
         <a href="#" className="recipeCard">
