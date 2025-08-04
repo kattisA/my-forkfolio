@@ -1,21 +1,16 @@
 import './App.css'
-import Header from "./components/Header";
-import Footer from "./components/Footer";
-import TopBar from "./components/Topbar";
-import Hero from "./components/Hero";
-import {RecipeLoader} from "./components/RecipeLoader";
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import {Home} from './pages/Home';
 
 function App() {
 
-  return (
-      <div className="wrapper">
-          <Header/>
-          <TopBar/>
-          <Hero />
-          <RecipeLoader />
-          <Footer/>
-      </div>
-  )
+    return (
+        <Router basename="/my-forkfolio">
+            <Routes>
+                <Route path="/" element={<Home />} />
+            </Routes>
+        </Router>
+    );
 }
 
 export default App
