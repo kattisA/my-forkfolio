@@ -3,7 +3,7 @@ import Header from "./components/Header";
 import Footer from "./components/Footer";
 import TopBar from "./components/Topbar";
 import Hero from "./components/Hero";
-import {RecipeList} from "./components/RecipeList";
+import {RecipeLoader} from "./components/RecipeLoader";
 
 function App() {
 
@@ -12,7 +12,7 @@ function App() {
           <Header/>
           <TopBar/>
           <Hero />
-          <RecipeList/>
+          <RecipeLoader />
           <Footer/>
       </div>
   )

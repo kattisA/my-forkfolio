@@ -1,26 +1,11 @@
 import { RecipeCard } from './RecipeCard';
 import type {Recipe} from "../types";
 
-export const recipes: Recipe[] = [
-    {
-        id: 'sallad',
-        title: 'Vegetarisk sallad',
-        description: 'En grön och fräsch sallad',
-        greenChoice: true,
-    },
-    {
-        id: 'lasagne',
-        title: 'Lasagne',
-        description: 'En superhärlig lasagne',
-    },
-    {
-        id: 'pizza',
-        title: 'Pizza',
-        description: 'Vem älskar inte pizza?',
-    },
-];
+interface Props {
+    recipes: Recipe[];
+}
 
-export const RecipeList = () => {
+export const RecipeList = ({ recipes }: Props) => {
     return (
         <section>
             <div className="infoBox">
