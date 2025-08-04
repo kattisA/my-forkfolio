@@ -1,11 +1,11 @@
 # ForkFolio
-My forkfolio is a recipe site where I can publish my recipies.
+My forkfolio is a recipe site where I can publish my recipies. You can find [My forkfolio](https://kattisa.github.io/my-forkfolio/) on GitHub pages.
 
 ## Description
 
 The purpose of this repository is to make a recipie site with real recipies based on the previous repository called Forkfolio.
 Forkfolio is a high fidelity prototype and a part of an examination for a course.
-The årototype is published on GitHub pages, see [Forkfolio](https://kattisa.github.io/forkfolio/).
+The prototype is published on GitHub pages, see [Forkfolio](https://kattisa.github.io/forkfolio/).
 
 
 ## Getting Started
