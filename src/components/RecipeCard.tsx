@@ -1,4 +1,5 @@
 import type { Recipe } from "../types";
+import { Link } from "react-router-dom";
 
 
 interface Props {
@@ -6,10 +7,14 @@ interface Props {
 }
 
 export const RecipeCard = ({ recipe }: Props) => {
-    const { title, description, greenChoice } = recipe;
+    const { id, title, description, greenChoice } = recipe;
 
     return (
-        <a href="#" className="recipeCard">
+        <Link
+            to={`/recipes/${id}`}
+            state={{ recipe }}                    // 👈 skicka hela objektet
+            className="recipeCard"
+        >
             <article>
                 <h3>{title}</h3>
                 <div className="cardFooter">
@@ -25,7 +30,7 @@ export const RecipeCard = ({ recipe }: Props) => {
                     </div>
                 </div>
             </article>
-        </a>
+        </Link>
 
     );
 };

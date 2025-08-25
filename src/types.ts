@@ -5,4 +5,5 @@ export interface Recipe {
     title: string;
     description: string;
     greenChoice?: boolean;
+    image?: string;
 }
