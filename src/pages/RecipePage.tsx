@@ -3,13 +3,12 @@ import TopBar from "../components/Topbar";
 import Hero from "../components/Hero";
 import Footer from "../components/Footer";
 import type { Recipe } from "../types";
-import { useLocation, useParams } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 
 type LocationState = { recipe?: Recipe };
 
 export const RecipePage = () => {
     const { state } = useLocation() as { state: LocationState };
-    const { id } = useParams();
     const recipe = state?.recipe;
     return(
         <div className="wrapper">
