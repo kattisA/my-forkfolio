@@ -3,13 +3,12 @@ import TopBar from "../components/Topbar";
 import Hero from "../components/Hero";
 import Footer from "../components/Footer";
 import type { Recipe } from "../types";
-import { useLocation } from "react-router-dom";
+import {Ingredients} from "../components/Ingredients";
+import {useParams} from "react-router-dom";
 
-type LocationState = { recipe?: Recipe };
 
 export const RecipePage = () => {
-    const { state } = useLocation() as { state: LocationState };
-    const recipe = state?.recipe;
+    const { recipe } = useParams<{ recipe: Recipe }>();
     return(
         <div className="wrapper">
             <Header/>
@@ -19,6 +18,9 @@ export const RecipePage = () => {
                 <main>
                     <div className="topContainer">
                         <img src={recipe?.image} alt={recipe?.title} />
+                        {recipe?.ingredients && (
+                            <Ingredients items={recipe.ingredients}/>
+                        )}
                     </div>
 
                     <div className="textContent">

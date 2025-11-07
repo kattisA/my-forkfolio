@@ -12,7 +12,7 @@ export const RecipeCard = ({ recipe }: Props) => {
     return (
         <Link
             to={`/recipes/${id}`}
-            state={{ recipe }}                    // 👈 skicka hela objektet
+            state={{ recipe }}
             className="recipeCard"
         >
             <article>
