@@ -12,7 +12,6 @@ export const RecipeCard = ({ recipe }: Props) => {
     return (
         <Link
             to={`/recipes/${id}`}
-            state={{ recipe }}
             className="recipeCard"
         >
             <article>

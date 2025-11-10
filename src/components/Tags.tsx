@@ -1,4 +1,3 @@
-import React from "react";
 type TagsProps = {
     categories: string[];
     onSelect?: (category: string) => void;
