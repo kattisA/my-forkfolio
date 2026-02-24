@@ -7,7 +7,7 @@ interface Props {
 }
 
 export const RecipeCard = ({ recipe }: Props) => {
-    const { id, title, description, greenChoice } = recipe;
+    const { id, title, description, image, greenChoice } = recipe;
 
     return (
         <Link
@@ -15,8 +15,14 @@ export const RecipeCard = ({ recipe }: Props) => {
             className="recipeCard"
         >
             <article>
+                {image && (
+                    <picture>
+                        <img src={image} alt={title}/>
+                    </picture>
+                )}
                 <h3>{title}</h3>
                 <div className="cardFooter">
+
                     <p>{description}</p>
                     <div className="iconContainer">
                         {greenChoice && (
