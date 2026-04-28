@@ -5,6 +5,8 @@ import Footer from "../components/Footer";
 import {Ingredients} from "../components/Ingredients";
 import {useParams} from "react-router-dom";
 import {useRecipes} from "../hooks/useRecipes";
+import React from "react";
+import {NumberedListText} from "../components/NumberedListText";
 
 
 export const RecipePage = () => {
@@ -38,7 +40,7 @@ export const RecipePage = () => {
             <div className="articleContainer">
                 <main>
                     <div className="topContainer">
-                        <img src={recipe?.image} alt={recipe?.title} />
+                        {recipe.image && <img src={recipe.image} alt={recipe.title}/>}
                         {recipe?.ingredients && (
                             <Ingredients items={recipe.ingredients}/>
                         )}
@@ -46,7 +48,13 @@ export const RecipePage = () => {
 
                     <div className="textContent">
                         <h1 id="recipe-title">{recipe?.title}</h1>
-                        <p className="textIntro">{recipe?.description}</p>
+                        <p className="textIntro">{recipe?.introduction}</p>
+                        {recipe.howList &&
+                            <NumberedListText myList={recipe.howList}/>
+                        }
+                        {recipe.outro &&
+                            <p>{recipe.outro}</p>
+                        }
                     </div>
                 </main>
             </div>
