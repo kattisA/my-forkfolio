@@ -5,7 +5,6 @@ import Footer from "../components/Footer";
 import {Ingredients} from "../components/Ingredients";
 import {useParams} from "react-router-dom";
 import {useRecipes} from "../hooks/useRecipes";
-import React from "react";
 import {NumberedListText} from "../components/NumberedListText";
 
 
