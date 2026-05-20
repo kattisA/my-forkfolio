@@ -26,7 +26,7 @@ export const Home = () => {
                     <TopBar/>
                     <Hero/>
                     <Tags categories={categories} onSelect={handleSelectCategory}/>
-                    <RecipeList recipes={recipes} />
+                    <RecipeList recipes={recipes} title="Mina recept" />
                     <Footer/>
             </div>
         );
