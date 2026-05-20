@@ -18,7 +18,7 @@ export const RecipeListPage = () => {
         <div className="wrapper">
             <Header/>
             <TopBar/>
-            <RecipeList recipes={filteredRecipes}/>
+            <RecipeList recipes={filteredRecipes} title={category?.toUpperCase()}/>
             <Footer/>
         </div>
     );

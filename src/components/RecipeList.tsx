@@ -3,9 +3,10 @@ import type {Recipe} from "../types";
 
 interface Props {
     recipes: Recipe[];
+    title: string;
 }
 
-export const RecipeList = ({ recipes }: Props) => {
+export const RecipeList = ({ recipes, title }: Props) => {
     return (
         <section>
             <div className="infoBox">
@@ -13,7 +14,7 @@ export const RecipeList = ({ recipes }: Props) => {
                     Välj recept med <i className="fa fa-leaf greenChoice fa-lg" aria-hidden="true"></i> för ett grönare val
                 </p>
             </div>
-            <h2 className="sectionTitle">Mina recept</h2>
+            <h2 className="sectionTitle">{title}</h2>
             <div className="sectionContainer">
                 {recipes.map(recipe => (
                     <RecipeCard key={recipe.id} recipe={recipe} />
